@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Capitalized Cities</title>
+</head>
+<body>
+  <ul id="list"></ul>
+
+  <script>
+    const cities = ['lonDon', 'ManCHESTer', 'BiRmiNGHAM', 'liVERpoOL'];
+
+    if (typeof document !== "undefined") {
+      const list = document.getElementById("list");
+      for (const city of cities) {
+        const lower = city.toLowerCase();
+        const firstLetter = lower.slice(0, 1);
+        const capitalized = lower.replace(firstLetter, firstLetter.toUpperCase());
+        const result = capitalized;
+        const listitem = document.createElement("li");
+        listitem.textContent = result;
+        list.appendChild(listitem);
+      }
+    } else {
+      console.log("The document object is not defined.");
+    }
+  </script>
+</body>
+</html>
